@@ -171,10 +171,10 @@
         numsym_layer {
             label = "Symbols";
             bindings = <
-   &kp N1  &kp N2          &kp N3     &kp N4   &kp N5    &kp N6     &kp N7     &kp N8             &kp N9    &kp N0
-    &kp A   &kp S  &kp LEFT_SHIFT      &kp F    &kp G  &kp SEMI  &kp MINUS  &kp EQUAL            &kp SQT  &kp BSPC
-&kp LSHFT   &kp X         &kp ESC    &kp DEL  &kp TAB  &kp BSLH   &kp LBKT    &kp DOT  &kp RIGHT_BRACKET   &kp RET
-                                   &kp SPACE   &trans    &trans     &trans
+   &kp N1  &kp N2         &kp N3     &kp N4   &kp N5    &kp N6     &kp N7     &kp N8             &kp N9    &kp N0
+    &kp A   &kp S  &kp LC(SPACE)      &kp F    &kp G  &kp SEMI  &kp MINUS  &kp EQUAL            &kp SQT  &kp BSPC
+&kp LSHFT   &kp X        &kp ESC    &kp DEL  &kp TAB  &kp BSLH   &kp LBKT    &kp DOT  &kp RIGHT_BRACKET   &kp RET
+                                  &kp SPACE   &trans    &trans     &trans
             >;
         };
 
