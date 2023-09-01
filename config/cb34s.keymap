@@ -150,10 +150,10 @@
         default_layer {
             label = "Base";
             bindings = <
-    &ht ESCAPE Q  &kp W           &kp E        &kp R            &kp T           &kp Y  &kp U      &kp I      &kp O                  &kp P
-           &kp A  &kp S           &kp D        &kp F            &kp G  &ht LEFT_GUI H  &kp J      &kp K      &kp L          &kp BACKSPACE
-&ht LEFT_SHIFT Z  &kp X  &ht LEFT_ALT C        &kp V            &kp B           &kp N  &kp M  &kp COMMA  &kp SLASH  &ht RIGHT_SHIFT ENTER
-                                         &lt 1 SPACE  &ht RCTRL SPACE           &mo 1  &mo 2
+    &ht ESCAPE Q  &kp W           &kp E            &kp R  &kp T           &kp Y  &kp U      &kp I      &kp O                  &kp P
+           &kp A  &kp S           &kp D            &kp F  &kp G  &ht LEFT_GUI H  &kp J      &kp K      &kp L          &kp BACKSPACE
+&ht LEFT_SHIFT Z  &kp X  &ht LEFT_ALT C            &kp V  &kp B           &kp N  &kp M  &kp COMMA  &kp SLASH  &ht RIGHT_SHIFT ENTER
+                                         &ht LCTRL SPACE  &mo 1           &mo 1  &mo 2
             >;
         };
 
@@ -171,10 +171,10 @@
         numsym_layer {
             label = "Symbols";
             bindings = <
-   &kp N1  &kp N2   &kp N3     &kp N4   &kp N5    &kp N6     &kp N7     &kp N8             &kp N9    &kp N0
-    &kp A   &kp S    &kp D      &kp F    &kp G  &kp SEMI  &kp MINUS  &kp EQUAL            &kp SQT  &kp BSPC
-&kp LSHFT   &kp X  &kp ESC    &kp DEL  &kp TAB  &kp BSLH   &kp LBKT    &kp DOT  &kp RIGHT_BRACKET   &kp RET
-                            &kp SPACE   &trans    &trans     &trans
+   &kp N1  &kp N2          &kp N3     &kp N4   &kp N5    &kp N6     &kp N7     &kp N8             &kp N9    &kp N0
+    &kp A   &kp S  &kp LEFT_SHIFT      &kp F    &kp G  &kp SEMI  &kp MINUS  &kp EQUAL            &kp SQT  &kp BSPC
+&kp LSHFT   &kp X         &kp ESC    &kp DEL  &kp TAB  &kp BSLH   &kp LBKT    &kp DOT  &kp RIGHT_BRACKET   &kp RET
+                                   &kp SPACE   &trans    &trans     &trans
             >;
         };
 
