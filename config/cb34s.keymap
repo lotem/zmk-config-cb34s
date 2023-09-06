@@ -113,12 +113,12 @@
 
         less_than {
             bindings = <&kp LESS_THAN>;
-            key-positions = <26 27>;
+            key-positions = <27 25>;
         };
 
         more_than {
             bindings = <&kp GREATER_THAN>;
-            key-positions = <27 28>;
+            key-positions = <28 25>;
         };
     };
 
@@ -170,9 +170,9 @@
         default_layer {
             label = "Base";
             bindings = <
-&ht ESCAPE Q      &kp W  &kp E           &kp R            &kp T  &kp Y  &kp U  &kp I      &kp O      &kp P
-&kp A             &kp S  &kp D           &kp F            &kp G  &kp H  &kp J  &kp K      &kp L      &kp BACKSPACE
-&ht LEFT_SHIFT Z  &kp X  &ht LEFT_ALT C  &kp V            &kp B  &kp N  &kp M  &kp COMMA  &kp SLASH  &ht RIGHT_SHIFT ENTER
+&kp Q             &kp W  &kp E           &kp R            &kp T  &kp Y  &kp U  &kp I            &kp O      &kp P
+&kp A             &kp S  &kp D           &kp F            &kp G  &kp H  &kp J  &ht RIGHT_GUI K  &kp L      &kp BACKSPACE
+&ht LEFT_SHIFT Z  &kp X  &ht LEFT_ALT C  &kp V            &kp B  &kp N  &kp M  &kp COMMA        &kp SLASH  &ht RIGHT_SHIFT ENTER
                                          &ht LCTRL SPACE  &mo 1  &mo 1  &mo 2
             >;
         };
