@@ -62,64 +62,6 @@
 / {
     combos {
         compatible = "zmk,combos";
-
-        combo_lpar {
-            timeout-ms = <40>;
-            key-positions = <12 13>;
-            bindings = <&kp LPAR>;
-        };
-
-        combo_rpar {
-            timeout-ms = <40>;
-            key-positions = <16 17>;
-            bindings = <&kp RPAR>;
-        };
-
-        left_lbkt {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <2 3>;
-            timeout-ms = <40>;
-        };
-
-        right_rgkt {
-            bindings = <&kp RBKT>;
-            key-positions = <6 7>;
-        };
-
-        left_brace {
-            bindings = <&kp LEFT_BRACE>;
-            key-positions = <22 23>;
-        };
-
-        right_brace {
-            bindings = <&kp RBRC>;
-            key-positions = <26 27>;
-        };
-
-        shift_minus {
-            bindings = <&kp UNDERSCORE>;
-            key-positions = <15 17>;
-        };
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <10 12>;
-        };
-
-        semi {
-            bindings = <&kp SEMICOLON>;
-            key-positions = <16 18>;
-        };
-
-        less_than {
-            bindings = <&kp LESS_THAN>;
-            key-positions = <27 25>;
-        };
-
-        more_than {
-            bindings = <&kp GREATER_THAN>;
-            key-positions = <28 25>;
-        };
     };
 
     // BEHAVIOR    
@@ -170,10 +112,10 @@
         default_layer {
             label = "Base";
             bindings = <
-&kp Q             &kp W  &kp E           &kp R            &kp T  &kp Y  &kp U  &kp I            &kp O      &kp P
-&kp A             &kp S  &kp D           &kp F            &kp G  &kp H  &kp J  &ht RIGHT_GUI K  &kp L      &kp BACKSPACE
-&ht LEFT_SHIFT Z  &kp X  &ht LEFT_ALT C  &kp V            &kp B  &kp N  &kp M  &kp COMMA        &kp SLASH  &ht RIGHT_SHIFT ENTER
-                                         &ht LCTRL SPACE  &mo 1  &mo 1  &mo 2
+&kp Q           &kp W  &kp E  &kp R      &kp T                   &kp Y      &kp U            &kp I            &kp O       &kp P
+&ht LSHFT A     &kp S  &kp D  &kp F      &kp G                   &kp H      &kp J            &ht RIGHT_GUI K  &kp L       &ht RSHFT SINGLE_QUOTE
+&ht LEFT_GUI Z  &kp X  &kp C  &kp V      &kp B                   &kp N      &kp M            &kp COMMA        &kp PERIOD  &ht RIGHT_ALT SLASH
+                              &lt 1 TAB  &mt LEFT_CONTROL ENTER  &kp SPACE  &lt 2 BACKSPACE
             >;
         };
 
@@ -191,10 +133,10 @@
         numsym_layer {
             label = "Symbols";
             bindings = <
-&kp N1     &kp N2  &kp N3         &kp N4     &kp N5   &kp N6    &kp N7     &kp N8     &kp N9             &kp N0
-&kp A      &kp S   &kp LC(SPACE)  &kp F      &kp G    &kp SEMI  &kp MINUS  &kp EQUAL  &kp SQT            &kp BSPC
-&kp LSHFT  &kp X   &kp ESC        &kp DEL    &kp TAB  &kp BSLH  &kp LBKT   &kp DOT    &kp RIGHT_BRACKET  &kp RET
-                                  &kp SPACE  &trans   &trans    &trans
+&kp N1                   &kp N2  &kp N3  &kp N4  &kp N5                   &kp N6                   &kp N7     &kp N8             &kp N9         &kp N0
+&mt LEFT_SHIFT CAPSLOCK  &none   &none   &none   &none                    &none                    &kp MINUS  &kp EQUAL          &kp BACKSLASH  &mt RIGHT_SHIFT GRAVE
+&kp LEFT_ALT             &none   &none   &none   &none                    &none                    &kp LBKT   &kp RIGHT_BRACKET  &kp SEMICOLON  &ht RIGHT_GUI SLASH
+                                         &trans  &mt LEFT_CONTROL ESCAPE  &mt RIGHT_CONTROL SPACE  &trans
             >;
         };
 
@@ -212,10 +154,10 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&kp F1        &kp F2        &kp F3        &kp F4      &kp F5     &kp F6      &kp F7         &kp F8           &kp F9        &kp F10
-&kp CAPSLOCK  &trans        &kp HOME      &kp END     &kp F11    &kp GRAVE   &kp C_VOL_DN   &kp C_VOLUME_UP  &kp UP_ARROW  &kp RIGHT
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &kp F12    &kp PG_UP   &kp PAGE_DOWN  &kp LEFT         &kp DOWN      &kp C_NEXT
-                                          &kp LCTRL   &kp SPACE  &kp C_MUTE  &trans
+&kp F1              &kp F2        &kp F3             &kp F4           &kp F5                   &kp F6                   &kp F7         &kp F8        &kp F9           &kp F10
+&mt LEFT_SHIFT F11  &kp F12       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE               &kp LEFT                 &kp DOWN       &kp UP_ARROW  &kp RIGHT_ARROW  &mt RIGHT_SHIFT DELETE
+&kp LEFT_ALT        &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2     &bt BT_CLR               &kp HOME                 &kp PAGE_DOWN  &kp PAGE_UP   &kp END          &kp RIGHT_GUI
+                                                     &trans           &mt LEFT_CONTROL ESCAPE  &mt RIGHT_CONTROL SPACE  &trans
             >;
         };
 
@@ -229,17 +171,6 @@
 	'-----------------\     |TO_0 |          |TO_0 |     /-----------------'
 	                   '--------------------------------'
 */
-
-        ble_layer {
-            label = "BLE";
-            bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_PRV  &bt BT_NXT   &bt BT_NXT   &bt BT_PRV  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
-&none         &none         &none         &none       &bt BT_CLR   &bt BT_CLR   &none       &none         &none         &none
-&none         &none         &none         &none       &bootloader  &bootloader  &none       &none         &none         &to 0
-                                          &none       &to 0        &to 0        &none
-            >;
-        };
-
         // ===========================================================================================================
         // -----------------------------------------------------------------------------
         /* 4 = Comfort
@@ -250,17 +181,6 @@
 	'-----------------\ CTRL| SPC |          |SHFT |CTRL /-----------------'
 	                   '--------------------------------'
 */
-
-        comfy_layer {
-            label = "COMFY";
-            bindings = <
-&kp TILDE   &kp LC(LEFT)  &kp UP         &kp LC(RIGHT)  &kp CARET         &kp PG_UP   &kp LC(LEFT)  &kp UP     &kp LC(RIGHT)  &kp DEL
-&kp DEL     &kp LEFT      &kp DOWN       &kp RIGHT      &kp LESS_THAN     &kp PG_DN   &kp LEFT      &kp DOWN   &kp RIGHT      &mt LC(BACKSPACE) BACKSPACE
-&kp LSHIFT  &kp DEL       &kp BACKSPACE  &none          &kp GREATER_THAN  &kp HOME    &kp GRAVE     &kp TILDE  &none          &to 0
-                                         &kp LCTRL      &kp SPACE         &kp LSHIFT  &kp LCTRL
-            >;
-        };
-
         // ===========================================================================================================
         // -----------------------------------------------------------------------------
         /* 5 = Numbers
@@ -271,25 +191,6 @@
 	'-----------------\ SHFT| SPC |          | SPC |SHFT /-----------------'
 	                   '--------------------------------'
 */
-
-        numbers_layer {
-            label = "NUMBERS";
-            bindings = <
-&kp KP_DIVIDE  &kp N7  &kp N8  &kp N9      &kp KP_MULTIPLY  &kp KP_MULTIPLY  &kp N7      &kp N8  &kp N9  &kp KP_DIVIDE
-&kp BACKSPACE  &kp N4  &kp N5  &kp N6      &kp KP_PLUS      &kp KP_PLUS      &kp N4      &kp N5  &kp N6  &kp BACKSPACE
-&kp N0         &kp N1  &kp N2  &kp N3      &kp KP_MINUS     &kp KP_MINUS     &kp N1      &kp N2  &kp N3  &kp N0
-                               &kp LSHIFT  &kp SPACE        &kp SPACE        &kp LSHIFT
-            >;
-        };
-
-        layer_6 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans
-            >;
-        };
     };
 };
 
