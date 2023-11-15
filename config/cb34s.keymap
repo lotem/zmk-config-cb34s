@@ -21,13 +21,18 @@
 
 &lt {
     flavor = "hold-preferred";
-    quick-tap-ms = <180>;
+    quick-tap-ms = <150>;
 };
 
 // Sticky Layer Behavior - release sticky behavior after x ms
 
 &sk {
     release-after-ms = <1800>;
+};
+
+&mt {
+    quick-tap-ms = <150>;
+    flavor = "tap-preferred";
 };
 
 // COMBOS
@@ -76,7 +81,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <180>;
+            quick-tap-ms = <150>;
             flavor = "hold-preferred";
         };
     };
