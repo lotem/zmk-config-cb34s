@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 // #include "keymap_eurkey_swiss_de.h"
 
@@ -26,9 +27,7 @@
 
 // Sticky Layer Behavior - release sticky behavior after x ms
 
-&sk {
-    release-after-ms = <1800>;
-};
+&sk { release-after-ms = <1800>; };
 
 &mt {
     quick-tap-ms = <180>;
@@ -66,9 +65,7 @@
 */
 
 / {
-    combos {
-        compatible = "zmk,combos";
-    };
+    combos { compatible = "zmk,combos"; };
 
     // BEHAVIOR    
     // ===========================================================================================================
@@ -104,10 +101,10 @@
         default_layer {
             label = "Base";
             bindings = <
-&kp Q         &kp W  &kp E  &kp R      &kp T             &kp Y      &kp U            &kp I      &kp O       &kp P
-&mt LSHIFT A  &kp S  &kp D  &kp F      &kp G             &kp H      &kp J            &kp K      &kp L       &mt RSHIFT APOS
-&mt LGUI Z    &kp X  &kp C  &kp V      &kp B             &kp N      &kp M            &kp COMMA  &kp PERIOD  &mt RALT SLASH
-                            &lt 1 TAB  &mtq LCTRL ENTER  &kp SPACE  &lt 2 BACKSPACE
+&mt LGUI Q    &kp W  &kp E  &kp R      &kp T        &kp Y      &kp U            &kp I      &kp O       &mt RALT P
+&mt LSHIFT A  &kp S  &kp D  &kp F      &kp G        &kp H      &kp J            &kp K      &kp L       &mt RSHIFT APOS
+&mt LCTRL Z   &kp X  &kp C  &kp V      &kp B        &kp N      &kp M            &kp COMMA  &kp PERIOD  &mt RCTRL SLASH
+                            &lt 1 TAB  &lt 2 ENTER  &kp SPACE  &lt 1 BACKSPACE
             >;
         };
 
@@ -122,13 +119,13 @@
 	                   '--------------------------------'
 */
 
-        numsym_layer {
-            label = "Symbols";
+        sym_layer {
+            label = "Sym";
             bindings = <
-&kp N1        &kp N2  &kp N3  &kp N4  &kp N5          &kp N6            &kp N7      &kp N8             &kp N9    &kp N0
-&kp CAPS      &none   &none   &none   &none           &none             &kp MINUS   &kp EQUAL          &kp SEMI  &kp APOS
-&kp LEFT_ALT  &none   &none   &none   &none           &none             &kp LBKT    &kp RIGHT_BRACKET  &kp BSLH  &mt RGUI GRAVE
-                              &trans  &mtq LCTRL ESC  &mtq RCTRL SPACE  &kp RSHIFT
+&none     &kp LBKT  &kp LBRC  &kp RBRC       &none        &kp CARET  &kp LPAR       &kp RPAR   &kp RBKT  &kp TILDE
+&kp EXCL  &kp AT    &kp HASH  &kp DLLR       &kp PRCNT    &kp AMPS   &kp MINUS      &kp EQUAL  &kp BSLH  &kp GRAVE
+&kp LALT  &none     &none     &none          &none        &kp ASTRK  &kp UNDER      &kp PLUS   &kp PIPE  &mt RALT SLASH
+                              &mtq LGUI ESC  &lt 3 ENTER  &trans     &mtq RGUI DEL
             >;
         };
 
@@ -143,14 +140,25 @@
 	                   '--------------------------------'
 */
 
-        nav_layer {
-            label = "Nav";
+        num_layer {
+            label = "Num";
             bindings = <
-&kp F1        &kp F2        &kp F3             &kp F4           &kp F5          &kp F6            &kp F7         &kp F8        &kp F9           &kp F10
-&kp F11       &kp F12       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE      &kp LEFT          &kp DOWN       &kp UP_ARROW  &kp RIGHT_ARROW  &kp DEL
-&kp LEFT_ALT  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2     &bt BT_CLR      &kp HOME          &kp PAGE_DOWN  &kp PAGE_UP   &kp END          &kp RIGHT_GUI
-                                               &kp LSHIFT       &mtq LCTRL ESC  &mtq RCTRL SPACE  &trans
+&kp INS   &kp HOME    &kp UP        &kp END       &kp PG_UP  &kp MINUS  &kp N7   &kp N8  &kp N9  &kp COLON
+&kp DEL   &kp LEFT    &kp DOWN      &kp RIGHT     &kp PG_DN  &kp PLUS   &kp N4   &kp N5  &kp N6  &kp SEMI
+&kp CAPS  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP   &kp ASTRK  &kp N1   &kp N2  &kp N3  &kp SLASH
+                                    &lt 3 ESC     &trans     &kp N0     &kp DOT
             >;
+        };
+
+        adjust_layer {
+            bindings = <
+&kp F1        &kp F2        &kp F3        &kp F4      &kp F5        &trans  &trans  &trans  &trans  &trans
+&kp F6        &kp F7        &kp F8        &kp F9      &kp F10       &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &kp F11     &kp F12       &trans  &trans  &trans  &trans  &trans
+                                          &bt BT_CLR  &out OUT_TOG  &trans  &trans
+            >;
+
+            label = "Adju";
         };
 
         // ===========================================================================================================
